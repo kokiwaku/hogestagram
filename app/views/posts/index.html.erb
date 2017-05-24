@@ -1,0 +1,9 @@
+<p><%= notice %></p>
+
+<%= @posts.each do |post| %>
+  <p><%= image_tag post.post_image.to_s %></p>
+  <p><%= post.post_image %></p>
+  <p><%= post.content %></p>
+  <%= link_to "投稿を編集する", edit_post_path(post.id) %>
+  <%= link_to "投稿を削除する", post_path(post.id), method: :delete, data:{confirm: '本当に削除していいですか？'} %>
+<% end %>
