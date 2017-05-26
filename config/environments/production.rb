@@ -74,7 +74,8 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  ActionMailer::Base.delivery_method = :smtp
+config.action_mailer.default_url_options = { host: 'https://boiling-chamber-33300.herokuapp.com/' }
+ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings =
 {
  user_name: ENV['SENDGRID_USERNAME'],
